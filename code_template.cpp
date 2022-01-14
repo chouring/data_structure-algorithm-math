@@ -294,7 +294,12 @@ void merge_segs(vector<PII>& segs) //传入segs引用，修改结果体现在seg
     if(st!=-2e9) res.push_back({st,ed}); //如果segs非空的话，把最后的也加上
     segs=res;
 }
+/*搜索*/
+//dfs
+//bfs
+//双端队列bfs：用于求边权只有0和1的最短路问题，本质为dijkstra
 
+//模拟退火
 //单链表
 int head,e[N],ne[N],idx;
 void init() //初始化
@@ -409,6 +414,37 @@ int query(string s)//查询s的出现次数
     return cnt[p];
 }
 
+//Manacher 马拉车算法 O(n)求最长回文子串
+//核心：通过构造，使得原串中每个长度为s的回文串 和 新串中长度为奇数的半径为s+1的回文串
+
+int p[N];
+char a[N],b[N];
+int n;
+void init()  // a[]为原串，b[]为插入'#'后的新串
+{
+    int k = 0;
+    b[k ++ ] = '$', b[k ++ ] = '#';
+    for (int i = 0; i < n; i ++ ) b[k ++ ] = a[i], b[k ++ ] = '#';
+    b[k ++ ] = '^';
+    n = k;
+}
+n=strlen(a);
+void manacher()  // 马拉车算法，b[]为插入'#'后的新串
+{
+    int mr = 0, mid; //维护mr和mid
+    for (int i = 1; i < n; i ++ ) //枚举以i为中心的回文串
+    {
+        if (i < mr) p[i] = min(p[mid * 2 - i], mr - i); //1.递推
+        else p[i] = 1;
+        while (b[i - p[i]] == b[i + p[i]]) p[i] ++ ; //2.再扩展
+        if (i + p[i] > mr) //3.更新mr和mid
+        {
+            mr = i + p[i];
+            mid = i;
+        }
+    }
+}
+
 //并查集
 int p[N];//每个节点的祖宗节点
 for(int i=1;i<=n;i++) p[i]=i;//初始化自己指向自己
@@ -453,6 +489,196 @@ void down(int u)//down操作
         down(t);
     }
 }
+/*
+BST 二叉搜索树 
+定义：左子树任意权值<根节点<右子树任意权值
+性质：中序遍历单增
+用途（包括平衡树）：动态维护有序序列（有序集合）
+BST和平衡树的常见操作：
+1.插入——
+2.删除——删叶节点
+3.找最大/最小——一直往右走、一直往左走
+4.找前驱/后继（默认是中序遍历）——也不常用
+这四个操作 set中都实现了，对应insert,erase,begin,end-1,++,--等等
+5.求某个值的排名
+6.求排名为k的数是哪个
+7.比某个数小的最大值
+8.比某个数大的最小值
+
+平衡树是一种特殊的BST，平衡树有红黑书，treap,splay等等
+treap = bst + heap 一种平衡树
+下边实现下treap
+*/
+struct Node{
+    int l,r; //左右儿子
+    int key; //bst的要求
+    int val; //heap的要求 一个随机值
+    int cnt; //出现次数
+    int size; //子树中点的个数
+}tr[N];
+int root;//根节点
+int idx;//分配到的节点
+
+void pushup(int p){
+    tr[p].size=tr[tr[p].l].size+tr[tr[p].r].size+tr[p].cnt;
+}
+int get_node(int key){ //创建一个新节点
+    tr[++idx].key=key;
+    tr[idx].val=rand();
+    tr[idx].cnt=tr[idx].size=1;
+    return idx;
+}
+void build(){ //创建treap
+    get_node(-INF),get_node(INF);
+    root=1,tr[1].r=2;
+}
+void zig(int &p){ //右旋
+    int q=tr[p].l;
+    tr[p].l=tr[q].r;
+    tr[q].r=p;
+    p=q;
+    pushup(tr[p].r);
+    pushup(p);
+}
+void zag(int &p){ //左旋
+    int q=tr[p].r;
+    tr[p].r=tr[q].l;
+    tr[q].l=p;
+    p=q;
+    pushup(p);
+    pushup(tr[p].l)
+}
+void insert(int &p,int key){
+    if(!p) p=get_node(key);
+    else if(tr[p].key==key) tr[p].cnt++;
+    else if(tr[p].key>key) {
+        insert(tr[p].l,key);
+        if(tr[tr[p].l].val>tr[p].val) zig(p);
+    }
+    else{
+        insert(tr[p].r,key);
+        if(tr[tr[p].r].val>tr[p].val) zag(p);
+    }
+    pushup(p);
+}
+void remove(int &p,int key){
+    if(!p) return;
+    else if(tr[p].key==key){
+        if(tr[p].cnt>1) tr[p].cnt--;
+        else if(tr[p].l||tr[p].r){
+            if(!tr[p].r||tr[tr[p].l].val>tr[tr[p].r].val){
+                zig(p);
+                remove(tr[p].r,key);
+            }
+            else {
+                zag(p);
+                remove(tr[p].l,key);
+            }
+        }
+        else p=0;
+    }
+    else if(tr[p].key>key) remove(tr[p].l,key);
+    else remove(tr[p].r,key);
+    pushup(p);
+}
+int get_rank_by_key(int &p,int key){ //通过数值找排名
+    if(!p) return 0;
+    if(tr[p].key==key) return tr[tr[p].l].size+1;
+    if(tr[p].key>key) return get_rank_by_key(tr[p].l,key);
+    else return get_rank_by_key(tr[p].r,key)+tr[tr[p].l].size+tr[p].cnt;
+}
+int get_key_by_rank(int &p,int rank){ //通过排名找数值
+    if(!p) return INF;
+    if(tr[tr[p].l].size>=rank) return get_key_by_rank(tr[p].l,rank);
+    if(tr[tr[p].l].size+tr[p].cnt>=rank) return tr[p].key;
+    else return get_key_by_rank(tr[p].r,rank-tr[tr[p].l].size-tr[p].cnt);
+}
+int get_prev(int &p,int key){ //找严格小于key的最大数
+    if(!p) return -INF;
+    if(tr[p].key>=key) return get_prev(tr[p].l,key);
+    return max(tr[p].key,get_prev(tr[p].r,key));
+}
+int get_next(int &p,int key){ //找到严格大于key的最小数
+    if(!p) return INF;
+    if(tr[p].key<=key) return get_next(tr[p].r,key);
+    return min(tr[p].key,get_next(tr[p].l,key));
+
+}
+
+//splay 竞赛中最常用的一种平衡树(可以替代treap)
+/*
+核心:每次插入、查询后，均将该节点旋转到树根
+操作:splay(x,k)把x旋转到k下边
+其他操作都是围绕着splay操作展开的
+*/
+struct Node{  //可能还会维护其他信息
+    int s[2],p,v;//儿子和父亲
+    int size;//子树大小
+    int flag;//懒标记，是否反转
+    void init(int _v,int _p){
+        v=_v,p=_p;
+        size=1;
+    }
+}tr[N];
+int root,idx;
+void pushup(int x){
+    tr[x].size=tr[tr[x].s[0]].size+tr[tr[u].s[1]].size+1;
+}
+void pushdown(int x){
+    if(tr[x].flag){
+        swap(tr[x].s[0],tr[x].s[1]);
+        tr[tr[x].s[0]].flag^=1;
+        tr[tr[x].s[1]].flag^=1;
+        tr[x].flag=0;
+    }
+}
+void rotate(int x){  //综合了四种情况的旋转函数
+    int y=tr[x].p;
+    int z=tr[y].p;
+    int k=tr[y].s[1]==x; //k=0表示x是y的左儿子，k=1表示x是y的右儿子
+    tr[z].s[tr[z].s[1]==y]=x,tr[x].p=z;
+    tr[y].s[k]=tr[x].s[k^1],tr[tr[x].s[k^1]].p=y;
+    tr[x].s[k^1]=y,tr[y].p=x;
+    pushup(y),pushup(x);
+}
+void splay(int x,int k){ //将节点x旋转到节点k下边
+    while(tr[x].p!=k){
+        int y=tr[x].p,z=tr[y].p;
+        if(z!=k){
+            if(tr[y].s[1]==x)^(tr[z].s[1]==y))rotate(x);
+            else rotate(y);
+        }
+        rotate(x);
+    }
+    if(!k) root=x;
+}
+void insert(int x){
+    int u=root,p=0;
+    while(u) p=u,u=tr[u].s[v>tr[u].v];
+    u=++idx;
+    if(p) tr[p].s[v>tr[p].v]=u;
+    tr[u].init(v,p);
+    splay(u,0);
+}
+int get_k(int k){ //找第k大
+    int u=root;
+    while(1){
+        pushdown(u);
+        if(tr[tr[u].s[0]].size>=k) u=tr[u].s[0];
+        else if(tr[tr[u].s[0]].size+1==k) return u;
+        else k-=tr[tr[u].s[0]]+1,u=tr[u].s[1];
+    }
+    return -1;
+}
+void output(int u){ //输出中序遍历
+    pushdown(u);
+    if(tr[u].s[0]) output(tr[u].s[0]);
+    if(tr[u].v>=1&&tr[u]<=n) printf("$d ",tr[u].v);
+    if(tr[u].s[1]) output(tr[u].s[1]);
+}
+
+//红黑树 一种很复杂的平衡树，工程中常用，算法竞赛中很少见
+//B树，B+树
 
 //哈希表
 
@@ -666,6 +892,10 @@ void floyd(){
             }
 }
 
+//LCA 最近公共祖先 可以求树上两点的最短路
+//两种写法:倍增或者tarjan算法
+
+
 //朴素prim 
 //O(n^2+m)
 int n;//点数
@@ -689,6 +919,7 @@ int prim(){ //如果不连通，返回正无穷，否则返回最小生成树的
     return res;
 }
 
+//二分图 《=》 二分图 《=》 无奇数环
 //染色法 判二分图
 int n;//点数
 int h[N],e[N],ne[M],idx; //邻接表
@@ -743,6 +974,29 @@ int res=0;
 for(int i=1;i<=n1;i++){
     memset(st,false,sizeof st);
     if(find(i)) res++;
+}
+
+
+//进制转换，秦九韶算法
+int get(string s,int b) //b进制的字符串s转化为十进制数
+{
+    int res=0;
+    for(auto c:s) res=res*b+c-'0';
+    //return to_string(res);
+    return res;
+}
+stirng get(string s,int b) //十进制的s转化为b进制字符串
+{
+    stirng res="";
+    int n=atoi(s);
+    while(n){
+        int cur=n%b;
+        if(cur>=10) res+=cur-10+'A';
+        else res+=cur-'0';
+        n/=b;
+    }
+    reverse(res.begin(),res.end());
+    return res;
 }
 
 //判定质数 试除法
@@ -1012,13 +1266,34 @@ for(int i=0;i<cnt;i++)
         res=mul(res,primes[i]);
     }
 
+//斐波那契数
+//f[i]=f[i-1]+f[i-2](i>=3),f[1]=f[2]=1;
+
 //卡特兰数
 // 给定n个0和n个1，它们按照某种顺序排成长度为2n的序列，满足任意前缀中0的个数都不少于1的个数的序列的数量为： Cat(n) = C(2n, n) / (n + 1)
+
+//斯特林数
+/* 
+第一类斯特林数：s(n,m):表示将n个不同元素构成m个圆排列的方案数（我们讨论无符号第一类斯特林数）
+dp求法:s[n][m]=s[n-1][m-1]+(n-1)s[n-1][m];
+第一类斯特林数的性质：https://baike.baidu.com/item/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/4938529?fr=aladdin
+*/
+s[0][0]=1;for (int i = 1; i <= n; i ++ ) for (int j = 1; j <= m; j ++ ) s[i][j] = (s[i - 1][j - 1] + (LL)(i-1) * s[i - 1][j]) % MOD;
+/*
+第二类斯特林数：S(n,m):表示将n个不同的元素分成m个集合的方案数
+dp求法:S[n][m]=S[n-1][m-1]+k*S[n-1][m];
+第二类斯特林数的性质：https://baike.baidu.com/item/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/4938529?fr=aladdin
+*/
+S[0][0]=1;for (int i = 1; i <= n; i ++ ) for (int j = 1; j <= m; j ++ ) S[i][j] = (S[i - 1][j - 1] + (LL)j * S[i - 1][j]) % MOD;
 
 //博弈论
 //Nim游戏：先手必胜《=》 A1^A2^...^An!=0
 
-//更新
+
+//线性基：核心是一个向量组所构成的“空间”中的“基”
+/*
+算法中常用于异或：
+*/
 
 
 
