@@ -1,3 +1,3 @@
-# code_templates
-Templates for some data structures and algorithms
-If you are confused about Chinese, it is recommended to use translation.The code template is very helpful for doing algorithm problems and reviewing algorithm ideas, isn't it?
+# 常用数据结构和算法的记录,通过学习众多模板总结的一套适合本人的算法模板
+
+# 目前文件过大，待整理目录。

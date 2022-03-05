@@ -257,7 +257,7 @@ while(i<j){
 for(int i=0,j=0;i<=r;i++) //i为主动指针，j为伴随指针，为了某个某个条件而维护
 {
     if(/*触发某个条件，要更新j了*/) //更新j
-    //操作
+        //操作
 }
 
 //离散化
@@ -277,7 +277,7 @@ int find(int x) //求原序列中某个数在新序列中的“排位”
     //return r;映射到0,1,2,3,....
 }
 //
-typedef pair<int,int> PII
+    typedef pair<int,int> PII
 void merge_segs(vector<PII>& segs) //传入segs引用，修改结果体现在segs
 {
     vector<PII> res;
@@ -490,25 +490,25 @@ void down(int u)//down操作
     }
 }
 /*
-BST 二叉搜索树 
-定义：左子树任意权值<根节点<右子树任意权值
-性质：中序遍历单增
-用途（包括平衡树）：动态维护有序序列（有序集合）
-BST和平衡树的常见操作：
-1.插入——
-2.删除——删叶节点
-3.找最大/最小——一直往右走、一直往左走
-4.找前驱/后继（默认是中序遍历）——也不常用
-这四个操作 set中都实现了，对应insert,erase,begin,end-1,++,--等等
-5.求某个值的排名
-6.求排名为k的数是哪个
-7.比某个数小的最大值
-8.比某个数大的最小值
+   BST 二叉搜索树 
+   定义：左子树任意权值<根节点<右子树任意权值
+   性质：中序遍历单增
+   用途（包括平衡树）：动态维护有序序列（有序集合）
+   BST和平衡树的常见操作：
+   1.插入——
+   2.删除——删叶节点
+   3.找最大/最小——一直往右走、一直往左走
+   4.找前驱/后继（默认是中序遍历）——也不常用
+   这四个操作 set中都实现了，对应insert,erase,begin,end-1,++,--等等
+   5.求某个值的排名
+   6.求排名为k的数是哪个
+   7.比某个数小的最大值
+   8.比某个数大的最小值
 
-平衡树是一种特殊的BST，平衡树有红黑书，treap,splay等等
-treap = bst + heap 一种平衡树
-下边实现下treap
-*/
+   平衡树是一种特殊的BST，平衡树有红黑书，treap,splay等等
+   treap = bst + heap 一种平衡树
+   下边实现下treap
+   */
 struct Node{
     int l,r; //左右儿子
     int key; //bst的要求
@@ -607,10 +607,10 @@ int get_next(int &p,int key){ //找到严格大于key的最小数
 
 //splay 竞赛中最常用的一种平衡树(可以替代treap)
 /*
-核心:每次插入、查询后，均将该节点旋转到树根
-操作:splay(x,k)把x旋转到k下边
-其他操作都是围绕着splay操作展开的
-*/
+   核心:每次插入、查询后，均将该节点旋转到树根
+   操作:splay(x,k)把x旋转到k下边
+   其他操作都是围绕着splay操作展开的
+   */
 struct Node{  //可能还会维护其他信息
     int s[2],p,v;//儿子和父亲
     int size;//子树大小
@@ -752,551 +752,551 @@ int dijkstra(){
         for(int j=1;j<=n;j++) if(!st[j]&&(t==-1||dist[t]>dist[j])) t=j;//找在集合S(确定集)外的dist最小的点
         for(int j=1;j<=n;j++) dist[j]=min(dist[j],dist[t]+g[t][j]);//把t当中转站更新其他点
         st[t]=true;
-   
-    if(dist[n]==0x3f3f3f3f) return -1;//1-n无最短路
-    return dist[n]; 
-}
-//堆优化dijkstra 
-//时间复杂度O(mlogn),常用于稀疏图，故用邻接表存储
-typedef pair<int,int> PII;
-int n;//点数
-int h[N],w[N],e[N],ne[N];//邻接表那一套东西（数组w存权值
-int dist[N];//距离数组
-bool st[N];//是否入集合S
-int dijkstra(){
-    memset(dist,0x3f,sizeof dist);
-    dist[1]=0;
-    priority_queue<PII,vector<PII>,greater<PII>> heap;
-    heap.push({0,1});//first是距离，second是点编号
-    while(heap.size()){
-        auto t=heap.top();
-        heap.pop();
-        int ver=t.second,distance=t.first;
-        if(st[ver]) continue;
-        st[ver]=true;
-        for(int i=h[ver];~i;i=ne[i]){
-            int j=e[i];
-            if(dist[j]>distance+w[i]){
-                dist[j]=distance+w[i];
-                heap.push({dist[j],j});
+
+        if(dist[n]==0x3f3f3f3f) return -1;//1-n无最短路
+        return dist[n]; 
+    }
+    //堆优化dijkstra 
+    //时间复杂度O(mlogn),常用于稀疏图，故用邻接表存储
+    typedef pair<int,int> PII;
+    int n;//点数
+    int h[N],w[N],e[N],ne[N];//邻接表那一套东西（数组w存权值
+    int dist[N];//距离数组
+    bool st[N];//是否入集合S
+    int dijkstra(){
+        memset(dist,0x3f,sizeof dist);
+        dist[1]=0;
+        priority_queue<PII,vector<PII>,greater<PII>> heap;
+        heap.push({0,1});//first是距离，second是点编号
+        while(heap.size()){
+            auto t=heap.top();
+            heap.pop();
+            int ver=t.second,distance=t.first;
+            if(st[ver]) continue;
+            st[ver]=true;
+            for(int i=h[ver];~i;i=ne[i]){
+                int j=e[i];
+                if(dist[j]>distance+w[i]){
+                    dist[j]=distance+w[i];
+                    heap.push({dist[j],j});
+                }
             }
         }
+        if(dist[n]==0x3f3f3f3f) return -1;
+        return dist[n];
     }
-    if(dist[n]==0x3f3f3f3f) return -1;
-    return dist[n];
-}
 
-//Bellman-Ford 基于dp
-//O(nm) 可以直接结构体存
-int n,m;//点数和边数
-int dist[N];//dist[i]存储1到i的最短距离
-struct Edge{
-    int a,b,w;
-}edges[M];//边，直接结构体存
-int bellman_ford(){
-    memset(dist,0x3f,sizeof dist);//dist初始化为正无穷
-    dist[1]=0;
+    //Bellman-Ford 基于dp
+    //O(nm) 可以直接结构体存
+    int n,m;//点数和边数
+    int dist[N];//dist[i]存储1到i的最短距离
+    struct Edge{
+        int a,b,w;
+    }edges[M];//边，直接结构体存
+    int bellman_ford(){
+        memset(dist,0x3f,sizeof dist);//dist初始化为正无穷
+        dist[1]=0;
 
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            int a=edges[j].a,b=edges[j].b,w=edges[j].w;
-            if(dist[b]>dist[a]+w) dist[b]=dist[a]+w;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                int a=edges[j].a,b=edges[j].b,w=edges[j].w;
+                if(dist[b]>dist[a]+w) dist[b]=dist[a]+w;
+            }
         }
+
+        if(dist[n]>0x3f3f3f3f/2) return -1;
+        return dist[n];
     }
 
-    if(dist[n]>0x3f3f3f3f/2) return -1;
-    return dist[n];
-}
+    //spfa(可以看成队列优化的bellman_ford算法)
+    //平均O(m),最坏O(nm) 邻接表存储
+    int n;//总点数
+    int h[N],ne[N],e[N],w[N],idx;//邻接表
+    int dist[N];//存储1-x的最短距离
+    bool st[N];//存储每个点是否在队列中
 
-//spfa(可以看成队列优化的bellman_ford算法)
-//平均O(m),最坏O(nm) 邻接表存储
-int n;//总点数
-int h[N],ne[N],e[N],w[N],idx;//邻接表
-int dist[N];//存储1-x的最短距离
-bool st[N];//存储每个点是否在队列中
+    int spfa(){
+        memset(dist,0x3f,sizeof dist);
+        dist[1]=0;
 
-int spfa(){
-    memset(dist,0x3f,sizeof dist);
-    dist[1]=0;
+        queue<int> q;
+        q.push(1); 
+        st[1]=true; //初始化队列1号点入队
 
-    queue<int> q;
-    q.push(1); 
-    st[1]=true; //初始化队列1号点入队
+        while(q.size()){
+            auto t=q.front();
+            q.pop();
+            st[t]=false;
 
-    while(q.size()){
-        auto t=q.front();
-        q.pop();
-        st[t]=false;
-
-        for(int i=h[t];~i;i=ne[i]){
-            int j=e[i];
-            if(dist[j]>dist[t]+w[i]){
-                dist[j]=dist[t]+w[i];
-                if(!st[j]){
-                    q.push(j);
-                    st[j]=true;
+            for(int i=h[t];~i;i=ne[i]){
+                int j=e[i];
+                if(dist[j]>dist[t]+w[i]){
+                    dist[j]=dist[t]+w[i];
+                    if(!st[j]){
+                        q.push(j);
+                        st[j]=true;
+                    }
                 }
             }
         }
     }
-}
-//spfs判负环
-int n;
-int h[N],e[N],w[N],ne[N],idx;
-int dist[N];
-int cnt[N];//cnt[i]存储1-i的最短路途径的点的个数
-bool st[N];
-int spfa[N];
+    //spfs判负环
+    int n;
+    int h[N],e[N],w[N],ne[N],idx;
+    int dist[N];
+    int cnt[N];//cnt[i]存储1-i的最短路途径的点的个数
+    bool st[N];
+    int spfa[N];
 
-bool spfa(){  //和spfa只有两点不同，1是不需要初始化dist数组，二是对cnt数组的维护和判断
-    // 不需要初始化dist数组
-    // 原理：如果某条最短路径上有n个点（除了自己），那么加上自己之后一共有n+1个点，由抽屉原理一定有两个点相同，所以存在环。
-    queue<int> q;
+    bool spfa(){  //和spfa只有两点不同，1是不需要初始化dist数组，二是对cnt数组的维护和判断
+        // 不需要初始化dist数组
+        // 原理：如果某条最短路径上有n个点（除了自己），那么加上自己之后一共有n+1个点，由抽屉原理一定有两个点相同，所以存在环。
+        queue<int> q;
+        for(int i=1;i<=n;i++){
+            q.push(i);
+            st[i]=true;
+        }
+        while(q.size()){
+            auto t=q.front();
+            q.pop();
+            st[t]=false;
+            for(int i=h[t];~i;i=ne[i]){
+                int j=e[i];
+                if(dist[j]>dist[t]+w[i]){
+                    dist[j]=dist[t]+w[i];
+                    cnt[j]=cnt[t]+1;
+                    if(cnt[j]>=n) return true;
+                    if(!st[j]){
+                        q.push(j);
+                        st[j]=true;
+                    }
+                }
+            }
+        }
+    }
+
+    //floyd 基于dp
+    //O(n^3)
+    const int INF=1e9;
     for(int i=1;i<=n;i++){
-        q.push(i);
-        st[i]=true;
+        for(int j=1;j<=n;j++){
+            if(i==j) d[i][j]=0;
+            else d[i][j]=INF;
+        }
     }
-    while(q.size()){
-        auto t=q.front();
-        q.pop();
-        st[t]=false;
-        for(int i=h[t];~i;i=ne[i]){
+    void floyd(){
+        for(int k=1;k<=n;k++)
+            for(int i=1;i<=n;i++)
+                for(int j=1;j<=n;j++){
+                    d[i][j]=d[i][k]+d[k][j];
+                }
+    }
+
+    //LCA 最近公共祖先 可以求树上两点的最短路
+    //两种写法:倍增或者tarjan算法
+
+
+    //朴素prim 
+    //O(n^2+m)
+    int n;//点数
+    int g[N][N];//邻接矩阵
+    int dist[N][N]; //存储其他点到当前最小生成树的距离
+    bool st[N];//是否在最小生成树中
+
+    int prim(){ //如果不连通，返回正无穷，否则返回最小生成树的权值和
+        memset(dist,0x3f,sizeof dist);
+        int res=0;
+        for(int i=0;i<n;i++){
+            int t=-1;
+            for(int j=1;j<=n;i++){ //找一个不在树中的最小的dist
+                if(!st[j]&&(t==-1||dist[t]>dist[j])) t=j; 
+            }
+            if(i&&dist[t]==INF) return INF; //不是第一次循环且最小距离都是正无穷
+            if(i) res+=dist[t]; //如果不是第一次循环，加入
+            st[t]=true;
+            for(int j=1;j<=n;j++) dist[j]=min(dist[j],g[t][j]);
+        }
+        return res;
+    }
+
+    //二分图 《=》 二分图 《=》 无奇数环
+    //染色法 判二分图
+    int n;//点数
+    int h[N],e[N],ne[M],idx; //邻接表
+    int color[N];//颜色
+    bool dfs(int u,int c){ //节点u的颜色为c
+        color[u]=c;
+        for(int i=h[u];~i;i=ne[i]){
             int j=e[i];
-            if(dist[j]>dist[t]+w[i]){
-                dist[j]=dist[t]+w[i];
-                cnt[j]=cnt[t]+1;
-                if(cnt[j]>=n) return true;
-                if(!st[j]){
-                    q.push(j);
-                    st[j]=true;
+            if(color[j]==-1){ //j这个点还没染色
+                if(!dfs(j,!c)) return false; //对j染另一种颜色
+            }
+            else if(color[j]==c) return false; //j这个点已经有颜色，且与我相同，直接false
+        }
+        return true; //最后没false就是true
+    }
+
+    bool check(){ 
+        memset(color,-1,sizeof color); //初始化color
+        bool flag=true; //返回答案
+        for(int i=1;i<=n;i++){  //遍历所有点，如果还没染色就对其染色
+            if(color[i]==-1){
+                if(!dfs(i,0)){
+                    flag=false;
+                    break;
                 }
             }
         }
+        return flag;
     }
-}
 
-//floyd 基于dp
-//O(n^3)
-const int INF=1e9;
-for(int i=1;i<=n;i++){
-    for(int j=1;j<=n;j++){
-        if(i==j) d[i][j]=0;
-        else d[i][j]=INF;
-    }
-}
-void floyd(){
-    for(int k=1;k<=n;k++)
-        for(int i=1;i<=n;i++)
-            for(int j=1;j<=n;j++){
-                d[i][j]=d[i][k]+d[k][j];
+    //匈牙利算法
+    //O(nm)
+    int n1,n2;//n1表示第一个集合中的点数，n2表示第二个集合中的点数
+    int h[N],e[M],ne[M],idx;//邻接表
+    int match[N];//存储第二个集合中每个点匹配的第一个集合中的点
+    bool st[N];//第二个集合中的点是否遍历过
+    bool find(int x){
+        for(int i=h[x];~i;i=ne[i]){
+            int j=e[i];
+            if(!st[j]){
+                st[j]=true;
+                if(match[j]==0||find(match[j])){
+                    match[j]=x;
+                    return true;
+                }
             }
-}
-
-//LCA 最近公共祖先 可以求树上两点的最短路
-//两种写法:倍增或者tarjan算法
-
-
-//朴素prim 
-//O(n^2+m)
-int n;//点数
-int g[N][N];//邻接矩阵
-int dist[N][N]; //存储其他点到当前最小生成树的距离
-bool st[N];//是否在最小生成树中
-
-int prim(){ //如果不连通，返回正无穷，否则返回最小生成树的权值和
-    memset(dist,0x3f,sizeof dist);
+        }
+        return false;
+    }
+    //求最大匹配数，依次枚举第一个集合中每个点能否匹配第二个集合中的点
     int res=0;
-    for(int i=0;i<n;i++){
-        int t=-1;
-        for(int j=1;j<=n;i++){ //找一个不在树中的最小的dist
-            if(!st[j]&&(t==-1||dist[t]>dist[j])) t=j; 
-        }
-        if(i&&dist[t]==INF) return INF; //不是第一次循环且最小距离都是正无穷
-        if(i) res+=dist[t]; //如果不是第一次循环，加入
-        st[t]=true;
-        for(int j=1;j<=n;j++) dist[j]=min(dist[j],g[t][j]);
+    for(int i=1;i<=n1;i++){
+        memset(st,false,sizeof st);
+        if(find(i)) res++;
     }
-    return res;
-}
 
-//二分图 《=》 二分图 《=》 无奇数环
-//染色法 判二分图
-int n;//点数
-int h[N],e[N],ne[M],idx; //邻接表
-int color[N];//颜色
-bool dfs(int u,int c){ //节点u的颜色为c
-    color[u]=c;
-    for(int i=h[u];~i;i=ne[i]){
-        int j=e[i];
-        if(color[j]==-1){ //j这个点还没染色
-            if(!dfs(j,!c)) return false; //对j染另一种颜色
-        }
-        else if(color[j]==c) return false; //j这个点已经有颜色，且与我相同，直接false
+
+    //进制转换，秦九韶算法
+    int get(string s,int b) //b进制的字符串s转化为十进制数
+    {
+        int res=0;
+        for(auto c:s) res=res*b+c-'0';
+        //return to_string(res);
+        return res;
     }
-    return true; //最后没false就是true
-}
+    stirng get(string s,int b) //十进制的s转化为b进制字符串
+    {
+        stirng res="";
+        int n=atoi(s);
+        while(n){
+            int cur=n%b;
+            if(cur>=10) res+=cur-10+'A';
+            else res+=cur-'0';
+            n/=b;
+        }
+        reverse(res.begin(),res.end());
+        return res;
+    }
 
-bool check(){ 
-    memset(color,-1,sizeof color); //初始化color
-    bool flag=true; //返回答案
-    for(int i=1;i<=n;i++){  //遍历所有点，如果还没染色就对其染色
-        if(color[i]==-1){
-            if(!dfs(i,0)){
-                flag=false;
-                break;
+    //判定质数 试除法
+    bool is_prime(int x){
+        if(x<2) return false;
+        for(int i=2;i<=x/i;i++){
+            if(x%i==0) return false;
+        }    
+        return true;
+    }
+
+    //分解质因数 试除法
+    void divide(int x){
+        for(int i=2;i<=x/i;i++){
+            if(x%i==0){
+                int s=0;
+                while(x%i==0) x/=i,s++;
+                //cout<<"质因数"<<i<<"的个数是"<<s<<endl;
             }
         }
+        if(x>1) //cout<<"质因数"<<x<<"的个数是"<<1<<endl;
     }
-    return flag;
-}
 
-//匈牙利算法
-//O(nm)
-int n1,n2;//n1表示第一个集合中的点数，n2表示第二个集合中的点数
-int h[N],e[M],ne[M],idx;//邻接表
-int match[N];//存储第二个集合中每个点匹配的第一个集合中的点
-bool st[N];//第二个集合中的点是否遍历过
-bool find(int x){
-    for(int i=h[x];~i;i=ne[i]){
-        int j=e[i];
-        if(!st[j]){
-            st[j]=true;
-            if(match[j]==0||find(match[j])){
-                match[j]=x;
-                return true;
-            }
-        }
-    }
-    return false;
-}
-//求最大匹配数，依次枚举第一个集合中每个点能否匹配第二个集合中的点
-int res=0;
-for(int i=1;i<=n1;i++){
-    memset(st,false,sizeof st);
-    if(find(i)) res++;
-}
-
-
-//进制转换，秦九韶算法
-int get(string s,int b) //b进制的字符串s转化为十进制数
-{
-    int res=0;
-    for(auto c:s) res=res*b+c-'0';
-    //return to_string(res);
-    return res;
-}
-stirng get(string s,int b) //十进制的s转化为b进制字符串
-{
-    stirng res="";
-    int n=atoi(s);
-    while(n){
-        int cur=n%b;
-        if(cur>=10) res+=cur-10+'A';
-        else res+=cur-'0';
-        n/=b;
-    }
-    reverse(res.begin(),res.end());
-    return res;
-}
-
-//判定质数 试除法
-bool is_prime(int x){
-    if(x<2) return false;
-    for(int i=2;i<=x/i;i++){
-        if(x%i==0) return false;
-    }    
-    return true;
-}
-
-//分解质因数 试除法
-void divide(int x){
-    for(int i=2;i<=x/i;i++){
-        if(x%i==0){
-            int s=0;
-            while(x%i==0) x/=i,s++;
-            //cout<<"质因数"<<i<<"的个数是"<<s<<endl;
-        }
-    }
-    if(x>1) //cout<<"质因数"<<x<<"的个数是"<<1<<endl;
-}
-
-//筛素数 朴素法
-int primes[N],cnt;//存储所有质数
-bool st[N];//st[i]:i是否被筛掉
-void get_primes(int n){
-    for(int i=2;i<=n;i++){
-        if(st[i]) continue;
-        primes[cnt++]=i;
-        for(int j=i+i;j<=n;j+=i){
-            st[j]=true;
-        }
-    }
-}
-//筛素数 线性筛
-int primes[N],cnt;//存储所有质数
-bool st[N];//st[i]:i是否被筛掉
-void get_primes(int n){
-    for(int i=2;i<=n;i++){
-        if(!st[i]) primes[cnt++]=i;
-        for(int j=0;primes[j]*i<=n;j++){
-            st[primes[j]*i]=true;
-            if(i%primes[j]==0) break;
-        }
-    }    
-}
-
-//求约数 试除法
-vector<int> get_divisors(int x){
-    vector<int> res;
-    for(int i=1;i<=x/i;i++){
-        if(x%i){
-            res.push_back(i);
-            if(i!=x/i) res.push_back(x/i); //如果不是平方，把俩数都加进去
-        }
-    }
-    sort(res.begin(),res.end());
-    return res;
-}
-//求约数个数
-/*
-如果 N = p1^c1 * p2^c2 * ... * pk^ck
-约数个数：(c1+1)*(c2+1)*...*(ck+1);
-*/
-//求约数之和
-/*
-如果 N = p1^c1 * p2^c2 * ... * pk^ck
-约数个数：(p1^0+p1^2+...p1^c1)*...*(pk^0*pk^1*...*pk^k);
-*/
-
-//求最大公约数 欧几里得算法
-typedef long long LL;
-LL gcd(LL a,LL b){return b?gcd(b,a%b):a;} 
-//优美的递归，类似的还有并查集的find函数
-
-//求欧拉函数 定义法
-int phi(int x){
-    int res=x;
-    for(int i=2;i<=x/i;i++){
-        if(x%i==0){
-            res=res/i*(i-1);
-            while(x%i==0) x/=i;
-        }
-    }
-    if(x>1) res=res/x*(x-1);
-    return res;
-}
-//求欧拉函数 筛法
-int primes[N],cnt;
-bool st[N];//线性筛
-int phi[N];//存储每个数的欧拉函数
-
-void get_eulers(int n){
-    phi[1]=1;
-    for(int i=2;i<=n;i++){
-        if(!st[i]){
+    //筛素数 朴素法
+    int primes[N],cnt;//存储所有质数
+    bool st[N];//st[i]:i是否被筛掉
+    void get_primes(int n){
+        for(int i=2;i<=n;i++){
+            if(st[i]) continue;
             primes[cnt++]=i;
-            phi[i]=i-1;  //质数i的欧拉函数就是i-1
-        }
-        for(int j=0;primes[j]*i<=n;j++){
-            st[primes[j]*i]=true;
-            if(i%primes[j]==0){
-                phi[primes[j]*i]=primes[j]*phi[i]; 
-                break;
+            for(int j=i+i;j<=n;j+=i){
+                st[j]=true;
             }
         }
-        phi[primes[j]*i]=phi[i]*(primes[j]-1);
     }
-}
-
-//快速幂
-int qmi(int a,int b,int p){
-    int res=1%p;
-    while(b){
-        if(b&1) res=res*a%p;
-        a=a*a%p;
-        b>>=1;
+    //筛素数 线性筛
+    int primes[N],cnt;//存储所有质数
+    bool st[N];//st[i]:i是否被筛掉
+    void get_primes(int n){
+        for(int i=2;i<=n;i++){
+            if(!st[i]) primes[cnt++]=i;
+            for(int j=0;primes[j]*i<=n;j++){
+                st[primes[j]*i]=true;
+                if(i%primes[j]==0) break;
+            }
+        }    
     }
-    return res;
-}
 
-//扩展欧几里得算法 
-//ax+by=gcd(a,b) 求解x,y
-int exgcd(int a,int b,int& x,int& y){
-    if(!b){
-        x=1;y=0;
-        return a;
+    //求约数 试除法
+    vector<int> get_divisors(int x){
+        vector<int> res;
+        for(int i=1;i<=x/i;i++){
+            if(x%i){
+                res.push_back(i);
+                if(i!=x/i) res.push_back(x/i); //如果不是平方，把俩数都加进去
+            }
+        }
+        sort(res.begin(),res.end());
+        return res;
     }
-    int d=exgcd(b,a%b,y,x);
-    y-=(a/b)*x;
-    return d;
-}
+    //求约数个数
+    /*
+       如果 N = p1^c1 * p2^c2 * ... * pk^ck
+       约数个数：(c1+1)*(c2+1)*...*(ck+1);
+       */
+    //求约数之和
+    /*
+       如果 N = p1^c1 * p2^c2 * ... * pk^ck
+       约数个数：(p1^0+p1^2+...p1^c1)*...*(pk^0*pk^1*...*pk^k);
+       */
 
-//高斯消元
-int a[N][N];//增广矩阵
-int gauss(){
-    int c,r;
-    for(c=0,r=0;c<n;c++){
-        int t=r;
-        for(int i=r;i<n;i++) //找到绝对值最大的衣阿华那个
-            if(fabs(a[i][c])>fabs(a[t][c])) t=i;
-        if(fabs(a[t][c])<eps) continue;//==0
+    //求最大公约数 欧几里得算法
+    typedef long long LL;
+    LL gcd(LL a,LL b){return b?gcd(b,a%b):a;} 
+    //优美的递归，类似的还有并查集的find函数
 
-        for(int i=c;i<=n;i++) swap(a[t][i],a[r][i]);//把最大的行交换到顶部
-        for(int i=n;i>=c;i--) a[r][i]/=a[r][c];//顶端行首位变成1
-        for(int i=r+1;i<n;i++){
-            if(fabs(a[i][c])>eps){ //如果不等于0,需要减掉
-                for(int j=n;j>=c;j--){
-                    a[i][j]-=a[r][j]*a[i][c];
+    //求欧拉函数 定义法
+    int phi(int x){
+        int res=x;
+        for(int i=2;i<=x/i;i++){
+            if(x%i==0){
+                res=res/i*(i-1);
+                while(x%i==0) x/=i;
+            }
+        }
+        if(x>1) res=res/x*(x-1);
+        return res;
+    }
+    //求欧拉函数 筛法
+    int primes[N],cnt;
+    bool st[N];//线性筛
+    int phi[N];//存储每个数的欧拉函数
+
+    void get_eulers(int n){
+        phi[1]=1;
+        for(int i=2;i<=n;i++){
+            if(!st[i]){
+                primes[cnt++]=i;
+                phi[i]=i-1;  //质数i的欧拉函数就是i-1
+            }
+            for(int j=0;primes[j]*i<=n;j++){
+                st[primes[j]*i]=true;
+                if(i%primes[j]==0){
+                    phi[primes[j]*i]=primes[j]*phi[i]; 
+                    break;
                 }
             }
-        }
-        r++;
-    }
-    if(r<n){
-        for(int i=r;i<n;i++)
-            if(fabs(a[i][n])>eps) return -1;//无解
-        return 2;//有无穷多组解
-    }
-    for(int i=n-1;i>=0;i--)
-        for(int j=i+1;j<n;j++)
-            a[i][n]-=a[i][j]*a[j][n];
-    return 1;//有唯一解
-}
-
-//求组合数 递推法
-int C[a][b];
-for(int i=0;i<N;i++){
-    for(int j=0;j<i;j++){
-        if(!j) C[i][j]=1;
-        else C[i][j]=(C[i-1][j]+C[i-1][j-1])%mod;
-    }
-}
-//求组合数 预处理逆元法
-int qmi(int a,int b,int p){
-    int res=1%p;
-    while(b){
-        res=res*a%p;
-        a=a*a%p;
-        b>>=1;
-    }
-    return res;
-}
-LL fact[N],infact[N];
-fact[0]=infact[0]=1;
-for(int i=1;i<N;i++){
-    fact[i]=(LL)fact[i-1]*i%mod;
-    infact[i]=(LL)infact[i-1]*qmi(i,mod-2,mod)%mod;
-}
-//求组合数 Lucas定理
-//若p为质数，则对于任意的整数1<=m<=n,C(n,m)=C(n%p,m%p)*C(n/p,m/p)(mod p)
-int qmi(int a,int b,int p){
-    int res=1%p;
-    while(b){
-        res=res*a%p;
-        a=a*a%p;
-        b>>=1;
-    }
-    return res;
-}
-int C(int a,int b,int p){
-    if(a<b) return 0;
-    LL x=1,y=1;//分子x，分母y
-    for(int i=a,j=1;j<=b;i--,j++){
-        x=(LL)x*i%p;
-        y=(LL)y*j%p;
-    }
-    return x*(LL)qmi(y,p-2,p)%p;
-}
-int lucas(LL a,LL b,int p){
-    if(a<b&&b<p) return C(a,b,p);
-    else return (LL)C(a%p,b%p,p)*lucas(a/p,b/p,p)%p;
-}
-//求组合数 分解质因数法
-// 当我们需要求出组合数的真实值，而非对某个数的余数时，分解质因数的方式比较好用：
-//     1. 筛法求出范围内的所有质数
-//     2. 通过 C(a, b) = a! / b! / (a - b)! 这个公式求出每个质因子的次数。 n! 中p的次数是 n / p + n / p^2 + n / p^3 + ...
-//     3. 用高精度乘法将所有质因子相乘
-int primes[N],cnt;
-bool st[N];//线性筛
-int sum[N];//每个质数出现的次数
-void get_primes(int n){
-    for(int i=2;i<=n;i++){
-        if(!st[i]) primes[cnt++]=i;
-        for(int j=0;primes[j]*i<=n;j++){
-            st[primes[j]*i]=true;
-            if(i%primes[j]==0) break;
+            phi[primes[j]*i]=phi[i]*(primes[j]-1);
         }
     }
-}
-int get(int n,int p)//求n!中的p次数
-{
-    int res=0;
-    while(n){
-        res+=n/p;
-        n/=p;
+
+    //快速幂
+    int qmi(int a,int b,int p){
+        int res=1%p;
+        while(b){
+            if(b&1) res=res*a%p;
+            a=a*a%p;
+            b>>=1;
+        }
+        return res;
     }
-    return res;
-}
-vector<int> mul(vector<int> a,int b)// 高精度乘低精度模板
-{
-    vector<int> c;
-    int t=0;
-    for(int i=0;i<a.size();i++)
+
+    //扩展欧几里得算法 
+    //ax+by=gcd(a,b) 求解x,y
+    int exgcd(int a,int b,int& x,int& y){
+        if(!b){
+            x=1;y=0;
+            return a;
+        }
+        int d=exgcd(b,a%b,y,x);
+        y-=(a/b)*x;
+        return d;
+    }
+
+    //高斯消元
+    int a[N][N];//增广矩阵
+    int gauss(){
+        int c,r;
+        for(c=0,r=0;c<n;c++){
+            int t=r;
+            for(int i=r;i<n;i++) //找到绝对值最大的衣阿华那个
+                if(fabs(a[i][c])>fabs(a[t][c])) t=i;
+            if(fabs(a[t][c])<eps) continue;//==0
+
+            for(int i=c;i<=n;i++) swap(a[t][i],a[r][i]);//把最大的行交换到顶部
+            for(int i=n;i>=c;i--) a[r][i]/=a[r][c];//顶端行首位变成1
+            for(int i=r+1;i<n;i++){
+                if(fabs(a[i][c])>eps){ //如果不等于0,需要减掉
+                    for(int j=n;j>=c;j--){
+                        a[i][j]-=a[r][j]*a[i][c];
+                    }
+                }
+            }
+            r++;
+        }
+        if(r<n){
+            for(int i=r;i<n;i++)
+                if(fabs(a[i][n])>eps) return -1;//无解
+            return 2;//有无穷多组解
+        }
+        for(int i=n-1;i>=0;i--)
+            for(int j=i+1;j<n;j++)
+                a[i][n]-=a[i][j]*a[j][n];
+        return 1;//有唯一解
+    }
+
+    //求组合数 递推法
+    int C[a][b];
+    for(int i=0;i<N;i++){
+        for(int j=0;j<i;j++){
+            if(!j) C[i][j]=1;
+            else C[i][j]=(C[i-1][j]+C[i-1][j-1])%mod;
+        }
+    }
+    //求组合数 预处理逆元法
+    int qmi(int a,int b,int p){
+        int res=1%p;
+        while(b){
+            res=res*a%p;
+            a=a*a%p;
+            b>>=1;
+        }
+        return res;
+    }
+    LL fact[N],infact[N];
+    fact[0]=infact[0]=1;
+    for(int i=1;i<N;i++){
+        fact[i]=(LL)fact[i-1]*i%mod;
+        infact[i]=(LL)infact[i-1]*qmi(i,mod-2,mod)%mod;
+    }
+    //求组合数 Lucas定理
+    //若p为质数，则对于任意的整数1<=m<=n,C(n,m)=C(n%p,m%p)*C(n/p,m/p)(mod p)
+    int qmi(int a,int b,int p){
+        int res=1%p;
+        while(b){
+            res=res*a%p;
+            a=a*a%p;
+            b>>=1;
+        }
+        return res;
+    }
+    int C(int a,int b,int p){
+        if(a<b) return 0;
+        LL x=1,y=1;//分子x，分母y
+        for(int i=a,j=1;j<=b;i--,j++){
+            x=(LL)x*i%p;
+            y=(LL)y*j%p;
+        }
+        return x*(LL)qmi(y,p-2,p)%p;
+    }
+    int lucas(LL a,LL b,int p){
+        if(a<b&&b<p) return C(a,b,p);
+        else return (LL)C(a%p,b%p,p)*lucas(a/p,b/p,p)%p;
+    }
+    //求组合数 分解质因数法
+    // 当我们需要求出组合数的真实值，而非对某个数的余数时，分解质因数的方式比较好用：
+    //     1. 筛法求出范围内的所有质数
+    //     2. 通过 C(a, b) = a! / b! / (a - b)! 这个公式求出每个质因子的次数。 n! 中p的次数是 n / p + n / p^2 + n / p^3 + ...
+    //     3. 用高精度乘法将所有质因子相乘
+    int primes[N],cnt;
+    bool st[N];//线性筛
+    int sum[N];//每个质数出现的次数
+    void get_primes(int n){
+        for(int i=2;i<=n;i++){
+            if(!st[i]) primes[cnt++]=i;
+            for(int j=0;primes[j]*i<=n;j++){
+                st[primes[j]*i]=true;
+                if(i%primes[j]==0) break;
+            }
+        }
+    }
+    int get(int n,int p)//求n!中的p次数
     {
-        t+=a[i]*b;
-        c.push_back(t%10);
-        t/=10;
+        int res=0;
+        while(n){
+            res+=n/p;
+            n/=p;
+        }
+        return res;
     }
-    while(t)
+    vector<int> mul(vector<int> a,int b)// 高精度乘低精度模板
     {
-        c.push_back(t%10);
-        t/=10;
+        vector<int> c;
+        int t=0;
+        for(int i=0;i<a.size();i++)
+        {
+            t+=a[i]*b;
+            c.push_back(t%10);
+            t/=10;
+        }
+        while(t)
+        {
+            c.push_back(t%10);
+            t/=10;
+        }
+        return c;
     }
-    return c;
-}
-get_primes(a);//预处理范围内的所有质数
-for(int i=0;i<cnt;i++){ //求每个质数出现的次数
-    int p=primes[i];
-    sum[i]=get(a,p)-get(b,p)-get(a-b,p);
-}
-vector<int> res; //高精度乘法把所有质因子相乘
-res.push_back(1);
-for(int i=0;i<cnt;i++)
-    for(int j=0;j<sum[i];j++){
-        res=mul(res,primes[i]);
+    get_primes(a);//预处理范围内的所有质数
+    for(int i=0;i<cnt;i++){ //求每个质数出现的次数
+        int p=primes[i];
+        sum[i]=get(a,p)-get(b,p)-get(a-b,p);
     }
+    vector<int> res; //高精度乘法把所有质因子相乘
+    res.push_back(1);
+    for(int i=0;i<cnt;i++)
+        for(int j=0;j<sum[i];j++){
+            res=mul(res,primes[i]);
+        }
 
-//斐波那契数
-//f[i]=f[i-1]+f[i-2](i>=3),f[1]=f[2]=1;
+    //斐波那契数
+    //f[i]=f[i-1]+f[i-2](i>=3),f[1]=f[2]=1;
 
-//卡特兰数
-// 给定n个0和n个1，它们按照某种顺序排成长度为2n的序列，满足任意前缀中0的个数都不少于1的个数的序列的数量为： Cat(n) = C(2n, n) / (n + 1)
+    //卡特兰数
+    // 给定n个0和n个1，它们按照某种顺序排成长度为2n的序列，满足任意前缀中0的个数都不少于1的个数的序列的数量为： Cat(n) = C(2n, n) / (n + 1)
 
-//斯特林数
-/* 
-第一类斯特林数：s(n,m):表示将n个不同元素构成m个圆排列的方案数（我们讨论无符号第一类斯特林数）
-dp求法:s[n][m]=s[n-1][m-1]+(n-1)s[n-1][m];
-第一类斯特林数的性质：https://baike.baidu.com/item/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/4938529?fr=aladdin
-*/
-s[0][0]=1;for (int i = 1; i <= n; i ++ ) for (int j = 1; j <= m; j ++ ) s[i][j] = (s[i - 1][j - 1] + (LL)(i-1) * s[i - 1][j]) % MOD;
-/*
-第二类斯特林数：S(n,m):表示将n个不同的元素分成m个集合的方案数
-dp求法:S[n][m]=S[n-1][m-1]+k*S[n-1][m];
-第二类斯特林数的性质：https://baike.baidu.com/item/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/4938529?fr=aladdin
-*/
-S[0][0]=1;for (int i = 1; i <= n; i ++ ) for (int j = 1; j <= m; j ++ ) S[i][j] = (S[i - 1][j - 1] + (LL)j * S[i - 1][j]) % MOD;
+    //斯特林数
+    /* 
+       第一类斯特林数：s(n,m):表示将n个不同元素构成m个圆排列的方案数（我们讨论无符号第一类斯特林数）
+       dp求法:s[n][m]=s[n-1][m-1]+(n-1)s[n-1][m];
+       第一类斯特林数的性质：https://baike.baidu.com/item/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/4938529?fr=aladdin
+       */
+    s[0][0]=1;for (int i = 1; i <= n; i ++ ) for (int j = 1; j <= m; j ++ ) s[i][j] = (s[i - 1][j - 1] + (LL)(i-1) * s[i - 1][j]) % MOD;
+    /*
+       第二类斯特林数：S(n,m):表示将n个不同的元素分成m个集合的方案数
+       dp求法:S[n][m]=S[n-1][m-1]+k*S[n-1][m];
+       第二类斯特林数的性质：https://baike.baidu.com/item/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/4938529?fr=aladdin
+       */
+    S[0][0]=1;for (int i = 1; i <= n; i ++ ) for (int j = 1; j <= m; j ++ ) S[i][j] = (S[i - 1][j - 1] + (LL)j * S[i - 1][j]) % MOD;
 
-//博弈论
-//Nim游戏：先手必胜《=》 A1^A2^...^An!=0
-
-
-//线性基：核心是一个向量组所构成的“空间”中的“基”
-/*
-算法中常用于异或：
-*/
+    //博弈论
+    //Nim游戏：先手必胜《=》 A1^A2^...^An!=0
 
 
+    //线性基：核心是一个向量组所构成的“空间”中的“基”
+    /*
+       算法中常用于异或：
+       */
 
- 
+
+
+
 
 
