@@ -15,6 +15,21 @@ void quick_sort(int a[], int l, int r) {
     return;
 }
 
+int quick_search_Kth(int a[], int l, int r, int k)
+{
+    if (l == r) return a[l];
+    int x = a[l + r >> 1], i = l - 1, j = r + 1;
+    while (i < j) {
+        do i++; while (a[i] < x);
+        do j--; while (a[j] > x);
+        if (i < j) swap(a[i], a[j]);
+    }
+    
+   if (k <= j - l + 1) return quick_search_Kth(a, l, j, k);
+   else return quick_search_Kth(a, j + 1, r, k - (j - l + 1));
+}
+
+
 void merge_sort(int a[], int l, int r) {
     if (l >= r) return;
     int mid = l + r >> 1;
@@ -23,12 +38,15 @@ void merge_sort(int a[], int l, int r) {
     vector<int> b;
     int dex = 0;
     while (i <= mid && j <= r) {
-        if (a[i] > a[j]) b[dex++] = a[j++];
-        else b[dex++] = a[i++];
+        if (a[i] <= a[j]) b[dex++] = a[i++];
+        else {
+            //res += mid - i + 1; //求逆序对
+            b[dex++] = a[j++];
+        }
     }
     while (i <= mid) b[dex++] = a[i++];
     while (j <= r) b[dex++] = a[j++];
-    return;
+    //return res;
 }
 
 
