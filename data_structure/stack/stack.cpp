@@ -16,6 +16,15 @@ bool is_empty() {
     return top == -1;
 }
 
+/*
+//the increasing or decreasing stack,a common apply situation is that query which number in an array is larger than and closest to this number in the left of the number. Same as the smaller,or in the right...
+int top = -1;
+for (int i = 1; i <= n; i++)
+{
+    while (top != -1 && check[stk[top], i)) top--;
+    stk[++top] = i;
+}
+*/
 int main(){
     return 0;
 }
