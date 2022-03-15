@@ -904,7 +904,7 @@ int dijkstra(){
     bool st[N];//是否在最小生成树中
 
     int prim(){ //如果不连通，返回正无穷，否则返回最小生成树的权值和
-        memset(dist,0x3f,sizeof dist);
+        memset(dist,0x3f,sizeof dist;
         int res=0;
         for(int i=0;i<n;i++){
             int t=-1;
