@@ -1,5 +1,5 @@
 # 进制转换
-```
+```cpp
 int get(string s, int b) { //b based to Decimal 
     int res = 0;
     for (auto c : s) res = res * b + c - '0';
