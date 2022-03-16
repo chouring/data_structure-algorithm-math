@@ -1,6 +1,6 @@
 # 快速幂相关
 
-```
+```cpp
 //quick_pow 快速幂 O(logb)时间求 a ^ b % p
 int qmi(int a, int b, int p) {
     int res = 1 % p;
@@ -32,41 +32,41 @@ typedef long long ll;
 const int N=3;
 int n,m;
 void mul(ll c[],ll a[],ll b[][N]){
-        ll temp[N]={0};
-            for(int i=0;i<N;i++){
-                       for(int j=0;j<N;j++){
-                                        temp[i]=(temp[i]+a[j]*b[j][i])%m;
-                                                }
-                            }
-                memcpy(c,temp,sizeof temp);
+    ll temp[N]={0};
+    for(int i=0;i<N;i++){
+        for(int j=0;j<N;j++){
+            temp[i]=(temp[i]+a[j]*b[j][i])%m;
+        }
+    }
+    memcpy(c,temp,sizeof temp);
 }
 void mul(ll c[][N],ll a[][N],ll b[][N]){
-        ll temp[N][N]={0};
-            for(int i=0;i<N;i++){
-                        for(int j=0;j<N;j++){
-                                        for(int k=0;k<N;k++){
-                                                            temp[i][j]=(temp[i][j]+a[i][k]*b[k][j])%m;
-                                                                        }
-                                                }
-                            }
-                memcpy(c,temp,sizeof temp);
+    ll temp[N][N]={0};
+    for(int i=0;i<N;i++){
+        for(int j=0;j<N;j++){
+            for(int k=0;k<N;k++){
+                temp[i][j]=(temp[i][j]+a[i][k]*b[k][j])%m;
+            }
+        }
+    }
+    memcpy(c,temp,sizeof temp);
 }
 int main(){
-        cin>>n>>m;
-            ll f1[N]={1,1,1};
-                ll a[N][N]={
-                            {0,1,0},
-                                    {1,1,1},
-                                            {0,0,1}
-                                };
-                    n--;
-                        while(n){
-                                    if(n&1) mul(f1,f1,a);
-                                            mul(a,a,a);
-                                                    n>>=1;
-                                                        }
-                            cout<<f1[2]<<endl;
-                                return 0;
+    cin>>n>>m;
+    ll f1[N]={1,1,1};
+    ll a[N][N]={
+        {0,1,0},
+        {1,1,1},
+        {0,0,1}
+    };
+    n--;
+    while(n){
+        if(n&1) mul(f1,f1,a);
+        mul(a,a,a);
+        n>>=1;
+    }
+    cout<<f1[2]<<endl;
+    return 0;
 }
 
 ```
