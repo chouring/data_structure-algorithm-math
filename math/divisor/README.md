@@ -1,5 +1,5 @@
 # 约数相关
-```
+```cpp
 //试除法求约数
 vector<int> get_divisors(int x) {
     vector<int> res;
