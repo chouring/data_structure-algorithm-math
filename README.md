@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-# data structure,algorithm and math
-data structures and algorithms are playing an important role in your career. So this repo is all about what I've learned about it.
-=======
 # data structure-algorithm-math 数据结构, 算法和数学
 Data structures and algorithms are playing an important role in your career. So this repo is all about what I've learned in it. The following is the table of contents. Help yourself.
->>>>>>> c1bd4b3125ef25398e0a71ce9eaa0dddd91cbebc
 
 数据结构和算法在你的职业生涯中扮演着重要的角色。所以这个repo是关于我从中学到的东西(代码记录)。以下是目录,有需要请自取。
 
