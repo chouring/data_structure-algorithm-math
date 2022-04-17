@@ -1,26 +1,23 @@
-# data structure-algorithm-math 数据结构, 算法和数学
+# data structure-algorithm-math 
 Data structures and algorithms are playing an important role in your career. So this repo is all about what I've learned in it. The following is the table of contents. Help yourself.
-
-数据结构和算法在你的职业生涯中扮演着重要的角色。所以这个repo是关于我从中学到的东西(代码记录)。以下是目录,有需要请自取。
 
 PS: this repo is only used to solve algorithm problems. But if you want to study something relible in engineering, [please click here](https://github.com/robotkkk/stable-structure-for-project).
 
-这些轮子适用于做算法题。若需要工程中使用的成熟稳定的轮子，[点这里](https://github.com/robotkkk/stable-structure-for-project)。
 
 ## data structure 数据结构
-[list-链表](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/list)
+[list](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/list)
 
-[stack-栈](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/stack)
+[stack](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/stack)
 
-[queue-队列](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/queue)
+[queue](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/queue)
 
-[heap-堆](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/heap)
+[heap](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/heap)
 
-[union query set-并查集](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/union_query_set)
+[union query set](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/union_query_set)
 
-[graph-图](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/graph)
+[graph](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/graph)
 
-[trie-字典树/前缀树](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/trie)
+[trie](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/trie)
 
 [treap](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/treap)
 
@@ -28,59 +25,59 @@ PS: this repo is only used to solve algorithm problems. But if you want to study
 
 
 ## algorithm 算法
-[sort-排序](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/sort)
+[sort](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/sort)
 
-[binary search-二分查找](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/binary_search)
+[binary search](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/binary_search)
 
-[two points-双指针](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/two_points)
+[two points](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/two_points)
 
-[pre sum-前缀和](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/pre_sum)
+[pre sum](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/pre_sum)
 
-[diff-差分](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/diff)
+[diff](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/diff)
 
-[disc-离散化](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/disc)
+[disc](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/disc)
 
-[search-搜索](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/search)
+[search](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/search)
 
-[dynamic program-动态规划](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/dp)
+[dynamic program](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/dp)
 
-[shortest path-最短路](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/graph/shortest_path.cpp)
+[shortest path](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/graph/shortest_path.cpp)
 
-[KMP-kmp算法](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/kmp/kmp.cpp)
+[KMP](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/kmp/kmp.cpp)
 
-[manacher-马拉车](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/manacher)
+[manacher](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/manacher)
 
-[LCA-最近公共祖先](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/graph/lca.cpp)
+[LCA](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/graph/lca.cpp)
 
-[toposort-拓扑排序](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/graph/toposort.cpp)
+[toposort](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/graph/toposort.cpp)
 
-[high precision calc-高精度计算](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/high_precision_calc/high_precision_calc.cpp)
+[high precision calc](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/high_precision_calc/high_precision_calc.cpp)
 
 [lowbit-lowbit](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/lowbit)
 
-[merge segs-区间合并](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/merge_segs)
+[merge segs](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/merge_segs)
 
 ## math 数学
-[bin coversion-进制转换/秦九韶算法](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/bin_coversion)
+[bin coversion](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/bin_coversion)
 
-[prime-质数](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/prime)
+[prime](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/prime)
 
-[divisor-约数](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/divisor)
+[divisor](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/divisor)
 
-[combination number-求组合数](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/combination_number)
+[combination number](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/combination_number)
 
-[quick pow-快速幂](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/quick_pow)
+[quick pow](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/quick_pow)
 
-[matrix-矩阵](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/matrix)
+[matrix](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/matrix)
 
-[euler-欧拉函数](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/euler)
+[euler](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/euler)
 
-[scan line-扫描线](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/scan_line)
+[scan line](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/scan_line)
 
-[simpson-辛普森积分](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/simpson)
+[simpson](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/simpson)
 
-[liner base-线性基](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/liner_base)
+[liner base](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/liner_base)
 
-[computational geometry-计算几何](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/computational_geometry)
+[computational geometry](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/computational_geometry)
 
-[game theory-博弈论](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/game_theory)
+[game theory](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/game_theory)
