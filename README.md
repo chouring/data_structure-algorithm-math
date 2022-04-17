@@ -4,7 +4,7 @@ Data structures and algorithms are playing an important role in your career. So 
 PS: this repo is only used to solve algorithm problems. But if you want to study something relible in engineering, [please click here](https://github.com/robotkkk/stable-structure-for-project).
 
 
-## data structure 数据结构
+## data structure
 [list](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/list)
 
 [stack](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/stack)
@@ -24,7 +24,7 @@ PS: this repo is only used to solve algorithm problems. But if you want to study
 [splay](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/splay)
 
 
-## algorithm 算法
+## algorithm
 [sort](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/sort)
 
 [binary search](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/binary_search)
@@ -57,7 +57,7 @@ PS: this repo is only used to solve algorithm problems. But if you want to study
 
 [merge segs](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/merge_segs)
 
-## math 数学
+## math
 [bin coversion](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/bin_coversion)
 
 [prime](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/prime)
