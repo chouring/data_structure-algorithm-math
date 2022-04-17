@@ -3,9 +3,9 @@ Data structures and algorithms are playing an important role in your career. So 
 
 数据结构和算法在你的职业生涯中扮演着重要的角色。所以这个repo是关于我从中学到的东西(代码记录)。以下是目录,有需要请自取。
 
-PS: this repo is only used to solve algorithm problems. But if you want to study something relible in engineering, [please click here]().
+PS: this repo is only used to solve algorithm problems. But if you want to study something relible in engineering, [please click here](https://github.com/robotkkk/stable-structure-for-project).
 
-这些轮子适用于做算法题。若需要工程中使用的成熟稳定的轮子，[点这里]()。
+这些轮子适用于做算法题。若需要工程中使用的成熟稳定的轮子，[点这里](https://github.com/robotkkk/stable-structure-for-project)。
 
 ## data structure 数据结构
 [list-链表](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/list)
