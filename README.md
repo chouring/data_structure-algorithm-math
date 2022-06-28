@@ -1,8 +1,5 @@
 # data structure-algorithm-math 
-Data structures and algorithms are playing an important role in your career. So this repo is all about what I've learned in it. The following is the table of contents. Help yourself.
-
-PS: this repo is only used to solve algorithm problems. But if you want to study something relible in engineering, [please click here](https://github.com/robotkkk/stable-structure-for-project).
-
+数据结构，算法和数学的学习笔记
 
 ## data structure
 [链表](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/list)
@@ -42,8 +39,6 @@ PS: this repo is only used to solve algorithm problems. But if you want to study
 [搜索](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/search)
 
 [动态规划](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/dp)
-
-[最短路](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/graph/shortest_path.cpp)
 
 [KMP](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/kmp/kmp.cpp)
 
