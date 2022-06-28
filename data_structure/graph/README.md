@@ -14,3 +14,5 @@
 [最小生成树]()
 
 [拓扑排序](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/toposort.md)
+
+[有向图的强连通分量](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/scc.md)
