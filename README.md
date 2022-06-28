@@ -15,9 +15,11 @@ PS: this repo is only used to solve algorithm problems. But if you want to study
 
 [并查集](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/union_query_set)
 
-[图](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/graph)
+[图论](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/graph)
 
 [字典树](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/trie)
+
+[平衡树]()
 
 [treap](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/treap)
 
@@ -35,7 +37,7 @@ PS: this repo is only used to solve algorithm problems. But if you want to study
 
 [差分](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/diff)
 
-[disc](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/disc)
+[离散化](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/disc)
 
 [搜索](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/search)
 
