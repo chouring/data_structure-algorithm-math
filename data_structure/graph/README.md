@@ -5,3 +5,4 @@
 [图如何存储](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/graph.md)
 
 ## 算法部分
+[差分约束](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/diff-constraint.md)
