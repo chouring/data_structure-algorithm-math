@@ -15,7 +15,7 @@ PS: this repo is only used to solve algorithm problems. But if you want to study
 
 [并查集](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/union_query_set)
 
-[图论](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/graph)
+[图论](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/graph/graph.md)
 
 [字典树](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/trie)
 
