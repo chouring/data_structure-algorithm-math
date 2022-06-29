@@ -2,26 +2,21 @@
 数据结构，算法和数学的学习笔记
 
 ## data structure
-[链表](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/list)
+[链表](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/list/list.md)
 
-[栈](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/stack)
+[栈](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/stack/stack.md)
 
-[队列](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/queue)
+[队列](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/queue/queue.md)
 
-[堆](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/heap)
+[堆](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/heap/heap.md)
 
-[并查集](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/union_query_set)
+[并查集](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/union_query_set/u_q_s.md)
 
 [图论](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/graph/README.md)
 
-[字典树](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/trie)
+[字典树](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/trie/trie.md)
 
-[平衡树]()
-
-[treap](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/treap)
-
-[splay](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/splay)
-
+[平衡树](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/bt/README.md)
 
 ## algorithm
 [排序](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/sort)
