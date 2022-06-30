@@ -19,35 +19,35 @@
 [平衡树](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/bt/README.md)
 
 ## algorithm
-[排序](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/sort)
+[排序](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/sort/sort.md)
 
-[二分](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/binary_search)
+[二分](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/binary_search/binary.md)
 
-[双指针](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/two_points)
+[双指针](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/two_points/README.md)
 
-[前缀和](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/pre_sum)
+[前缀和](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/pre_sum/pre_sum.md)
 
-[差分](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/diff)
+[差分](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/diff/diff.md)
 
-[离散化](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/disc)
+[离散化](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/disc/README.md)
 
-[搜索](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/search)
+[搜索](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/search/README.md)
 
-[动态规划](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/dp)
+[动态规划](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/dp/README.md)
 
-[KMP](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/kmp/kmp.cpp)
+[KMP](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/kmp/kmp.md)
 
-[manacher](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/manacher)
+[manacher](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/manacher/manacher.md)
 
-[LCA](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/graph/lca.cpp)
+[高精度](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/high_precision_calc/high_precision_calc.md)
 
-[高精度](https://github.com/robotkkk/data-structure-and-algorithm/blob/main/algorithm/high_precision_calc/high_precision_calc.cpp)
+[区间合并](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/merge_segs/README.md)
 
-[lowbit](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/lowbit)
-
-[区间合并](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/algorithm/merge_segs)
+[LCA]()
 
 ## math
+[lowbit](https://github.com/chouring/data_structure-algorithm-math/blob/main/math/low_bit/low_bit.md)
+
 [进制转换](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/bin_coversion)
 
 [质数相关](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/prime)
