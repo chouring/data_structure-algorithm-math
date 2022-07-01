@@ -20,3 +20,5 @@
 [无向图的双连通分量](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/dcc.md)
 
 [二分图](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/b_graph.md)
+
+[欧拉路径和欧拉回路](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/euler.md)
