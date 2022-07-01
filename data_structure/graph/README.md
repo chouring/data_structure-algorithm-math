@@ -18,3 +18,5 @@
 [有向图的强连通分量](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/scc.md)
 
 [无向图的双连通分量](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/dcc.md)
+
+[二分图](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/b_graph.md)
