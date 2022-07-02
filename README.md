@@ -16,6 +16,8 @@
 
 [字典树](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/trie/trie.md)
 
+[线段树]()
+
 [平衡树](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/bt/README.md)
 
 ## algorithm
