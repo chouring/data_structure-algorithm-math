@@ -16,9 +16,13 @@
 
 [字典树](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/trie/trie.md)
 
+[树状数组]()
+
 [线段树]()
 
 [平衡树](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/bt/README.md)
+
+[数据结构持久化]
 
 ## algorithm
 [排序](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/sort/sort.md)
@@ -38,6 +42,8 @@
 [动态规划](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/dp/README.md)
 
 [KMP](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/kmp/kmp.md)
+
+[AC自动机]()
 
 [manacher](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/manacher/manacher.md)
 
