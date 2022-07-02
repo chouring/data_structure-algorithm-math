@@ -22,7 +22,7 @@
 
 [平衡树](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/bt/README.md)
 
-[数据结构持久化]
+[数据结构持久化](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/persistence/persistence.md)
 
 ## algorithm
 [排序](https://github.com/chouring/data_structure-algorithm-math/blob/main/algorithm/sort/sort.md)
