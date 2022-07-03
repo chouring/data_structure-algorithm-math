@@ -1,4 +1,11 @@
-```
+# 质数
+## 概念
+    质数：因数只有1和本身的数
+## 功能
+    质数处理相关的算法
+## 模板
+```cpp
+// 试除法 判断质数，时间复杂度O(sqrt(n))
 bool is_prime(int x) {
     if (x < 2) return false;
     for (int i = 2; i <= x / i; i++) {
@@ -9,7 +16,8 @@ bool is_prime(int x) {
 ```
 
 
-```
+```cpp
+// 暴力求所有质数及其次数
 void divide(int x) {
     for (int i = 2; i <= x / i; i++) {
         if (x % i == 0) {
@@ -22,7 +30,8 @@ void divide(int x) {
 }
 ```
 
-```
+```cpp
+// 筛法求质数 
 int primes[N], cnt;
 bool st[N];
 void get_primes(int n) {  //brute-force
