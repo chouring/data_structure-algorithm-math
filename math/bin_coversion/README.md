@@ -1,4 +1,9 @@
 # 进制转换
+## 概念
+    一个数可以用各种进制来表示和计算。很多场景会涉及进制的转换操作。
+## 功能
+    对各种进制的数进行转换
+## 模板
 ```cpp
 int get(string s, int b) { //b based to Decimal 
     int res = 0;
