@@ -33,6 +33,12 @@ ll gcd(ll a, ll b) {return b ? gcd(b, a % b) : a;};
 typedef long long ll;
 ll gcd(ll a, ll b) {return b ? gcd(b, a % b) : a;};
 
+// 求最小公倍数
+ll lcm(ll a, ll b) {
+    return a * b / gcd(a, b);
+}
+
+
 //扩展欧几里得算法
 int exgcd(int a, int b, int& x, int& y) {
     if (!b) {
