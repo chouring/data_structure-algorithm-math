@@ -60,7 +60,7 @@
 
 [质数相关](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/prime)
 
-[同余](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/divisor)
+[约数相关](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/divisor)
 
 [组合数相关](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/combination_number)
 
