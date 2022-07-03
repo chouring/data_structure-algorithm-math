@@ -1,5 +1,10 @@
 # 快速幂相关
-
+## 概念
+## 功能
+    快速幂：快速计算a^b % MOD
+    龟速乘：慢速计算a*b % MOD, 优势是数据范围大
+    矩阵快速幂：快速计算矩阵乘法
+## 模板
 ```cpp
 //quick_pow 快速幂 O(logb)时间求 a ^ b % p
 int qmi(int a, int b, int p) {
