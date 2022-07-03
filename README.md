@@ -60,13 +60,13 @@
 
 [质数相关](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/prime)
 
-[](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/divisor)
+[同余](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/divisor)
 
 [组合数相关](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/combination_number)
 
 [快速幂](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/quick_pow)
 
-[矩阵相关](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/matrix)
+[高斯消元](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/matrix)
 
 [欧拉公式](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/euler)
 
