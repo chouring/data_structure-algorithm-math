@@ -62,6 +62,8 @@
 
 [约数相关](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/divisor)
 
+[余数相关](https://github.com/chouring/data_structure-algorithm-math/blob/main/math/remainder/remainder.md)
+
 [组合数相关](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/combination_number)
 
 [快速幂](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/quick_pow)
