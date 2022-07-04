@@ -68,6 +68,8 @@
 
 [容斥原理](https://github.com/chouring/data_structure-algorithm-math/blob/main/math/in_ex/in_ex.md)
 
+[莫比乌斯函数](https://github.com/chouring/data_structure-algorithm-math/blob/main/math/mobius/mobius.md)
+
 [快速幂](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/quick_pow)
 
 [高斯消元](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/matrix)
