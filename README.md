@@ -85,3 +85,5 @@
 [计算几何](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/computational_geometry)
 
 [博弈论](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/game_theory)
+
+[概率相关](https://github.com/chouring/data_structure-algorithm-math/blob/main/math/probability/probability.md)
