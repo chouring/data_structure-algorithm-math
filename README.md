@@ -66,6 +66,8 @@
 
 [组合数相关](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/combination_number)
 
+[容斥原理](https://github.com/chouring/data_structure-algorithm-math/blob/main/math/in_ex/in_ex.md)
+
 [快速幂](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/quick_pow)
 
 [高斯消元](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/math/matrix)
