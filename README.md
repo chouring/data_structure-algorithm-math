@@ -12,6 +12,8 @@
 
 [并查集](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/union_query_set/u_q_s.md)
 
+[哈希表](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/hash/hash.md)
+
 [图论](https://github.com/robotkkk/data-structure-and-algorithm/tree/main/data_structure/graph/README.md)
 
 [字典树](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/trie/trie.md)
