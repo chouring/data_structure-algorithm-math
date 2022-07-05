@@ -11,7 +11,7 @@
 
 [差分约束](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/diff-constraint.md)
 
-[最小生成树]()
+[最小生成树](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/mst.md)
 
 [拓扑排序](https://github.com/chouring/data_structure-algorithm-math/blob/main/data_structure/graph/toposort.md)
 
